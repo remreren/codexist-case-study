@@ -1,0 +1,48 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /codexist-places
+
+spring:
+  application:
+    name: codexist-places
+
+  profiles:
+    active: dev
+
+  redis:
+    cluster:
+      nodes: localhost:6379
+    timeout: 3000
+    socket-timeout: 1500
+    password: password
+
+management:
+  health:
+    redis:
+      enabled: true
+    defaults:
+      enabled: true
+  endpoint:
+    beans:
+      cache:
+        time-to-live: "1d"
+    health:
+      show-details: always
+      status:
+        http-mapping:
+          UP: 200
+          UNKNOWN: 200
+          DOWN: 503
+          OUT_OF_SERVICE: 503
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "beans,caches,caches-cache,conditions,configprops,env-toMatch,env,heapdump,threaddump,mappings"
+
+codexist:
+
+  places:
+    key: <key>
+    radius: 10000
