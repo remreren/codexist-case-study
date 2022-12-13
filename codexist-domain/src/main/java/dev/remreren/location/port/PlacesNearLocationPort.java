@@ -8,6 +8,6 @@ import java.util.List;
 @DomainComponent
 public interface PlacesNearLocationPort {
 
-    List<PlaceModel> getPlacesNearLocation(Double lat, Double lng, String query);
+    List<PlaceModel> getPlacesNearLocation(Double lat, Double lng, Long radius);
 
 }

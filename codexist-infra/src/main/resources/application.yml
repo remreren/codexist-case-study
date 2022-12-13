@@ -17,6 +17,10 @@ spring:
     socket-timeout: 1500
     password: password
 
+logging:
+  level:
+    root: debug
+
 management:
   health:
     redis:
@@ -42,7 +46,5 @@ management:
         exclude: "beans,caches,caches-cache,conditions,configprops,env-toMatch,env,heapdump,threaddump,mappings"
 
 codexist:
-
   places:
     key: <key>
-    radius: 10000
