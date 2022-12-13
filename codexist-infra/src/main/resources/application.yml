@@ -11,8 +11,6 @@ spring:
     active: dev
 
   redis:
-    cluster:
-      nodes: localhost:6379
     timeout: 3000
     socket-timeout: 1500
     password: password

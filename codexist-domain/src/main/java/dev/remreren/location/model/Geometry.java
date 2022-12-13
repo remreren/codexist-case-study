@@ -1,14 +1,14 @@
 package dev.remreren.location.model;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Getter
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class Geometry {
 
-    private final Location location;
+    private Location location;
 
-    private final ViewPort viewport;
+    private ViewPort viewport;
 
 }

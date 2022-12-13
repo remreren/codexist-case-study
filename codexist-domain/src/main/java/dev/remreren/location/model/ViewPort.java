@@ -1,14 +1,14 @@
 package dev.remreren.location.model;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Getter
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class ViewPort {
 
-    private final Location northeast;
+    private Location northeast;
 
-    private final Location southwest;
+    private Location southwest;
 
 }

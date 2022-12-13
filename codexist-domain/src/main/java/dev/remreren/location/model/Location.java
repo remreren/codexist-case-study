@@ -1,14 +1,14 @@
 package dev.remreren.location.model;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Getter
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class Location {
 
-    private final Double lat;
+    private Double lat;
 
-    private final Double lng;
+    private Double lng;
 
 }

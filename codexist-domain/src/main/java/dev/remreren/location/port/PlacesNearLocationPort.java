@@ -1,13 +1,11 @@
 package dev.remreren.location.port;
 
 import dev.remreren.common.DomainComponent;
-import dev.remreren.location.model.PlaceModel;
-
-import java.util.List;
+import dev.remreren.location.model.PlaceResponse;
 
 @DomainComponent
 public interface PlacesNearLocationPort {
 
-    List<PlaceModel> getPlacesNearLocation(Double lat, Double lng, Long radius);
+    PlaceResponse getPlacesNearLocation(Double lat, Double lng, Long radius);
 
 }

@@ -1,17 +1,16 @@
 package dev.remreren.adapter.location.model;
 
-import dev.remreren.location.model.PlaceModel;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Getter
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class GooglePlacesResponse {
 
-    private final List<PlaceModel> results;
+    private List<Place> results;
 
-    private final String status;
+    private String status;
 
 }
