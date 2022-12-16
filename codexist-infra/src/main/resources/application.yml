@@ -45,4 +45,5 @@ management:
 
 codexist:
   places:
+    url: https://maps.googleapis.com/maps/api/place/nearbysearch/json
     key: <key>
