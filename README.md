@@ -1,5 +1,5 @@
 
-# Project Title
+# Codexist Case Study
 
 This application is created for codexist for the case study purpose.
 
