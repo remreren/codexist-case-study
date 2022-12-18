@@ -7,13 +7,16 @@ spring:
   application:
     name: codexist-places
 
-  profiles:
-    active: dev
-
-  redis:
-    timeout: 3000
-    socket-timeout: 1500
-    password: password
+  data:
+    redis:
+      jedis:
+        pool:
+          enabled: on
+      host: ${REDIS_HOST_URL}
+      password: ${REDIS_HOST_PASSWORD}
+      port: ${REDIS_HOST_PORT}
+      ssl: true
+      username: default
 
 logging:
   level:
@@ -46,4 +49,4 @@ management:
 codexist:
   places:
     url: https://maps.googleapis.com/maps/api/place/nearbysearch/json
-    key: AIzaSyAQLEWp-adcWG-zLCM5X8Iwf_q1DUznv7w
+    key: ${GOOGLE_PLACES_KEY}
