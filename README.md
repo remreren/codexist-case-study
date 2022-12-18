@@ -54,3 +54,7 @@ To run tests, run the following command
 ## Demo
 
 You can see the demo by going to; https://codexist-fe-by66nzg4wa-ew.a.run.app/
+
+## Note
+
+The application is now running on 9090 port. Just by changing port in application.yml files and exposed port in Dockerfile (for BE) you can run in 8070 or another port as you wanted. When you changed the port, the deployment needs to be done again.
