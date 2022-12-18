@@ -1,8 +1,9 @@
 FROM maven:3.8.4-openjdk-17-slim as build
 WORKDIR /app
 COPY . .
-# RUN mvn -f /app/pom.xml -B --no-transfer-progress dependency:go-offline
-RUN --mount=type=cache,target=/root/.m2,rw mvn -f /app/pom.xml -B -U clean package # -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+
+RUN mvn -f /app/pom.xml -B --no-transfer-progress dependency:go-offline
+RUN mvn -f /app/pom.xml -B -U clean package -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
 
 
 FROM openjdk:17-jdk-slim
