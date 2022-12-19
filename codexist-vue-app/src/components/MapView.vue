@@ -1,9 +1,9 @@
 <template>
   <div class="hello">
     <h1>Enter the coordiantes and hit go button</h1>
-    <input :v-model="lat" placeholder="latitude" />
-    <input :v-model="lng" placeholder="longitude" />
-    <input :v-model="radius" placeholder="radius" />
+    <input :v-model="lat" placeholder="latitude" ref="lat" />
+    <input :v-model="lng" placeholder="longitude" ref="lng" />
+    <input :v-model="radius" placeholder="radius" ref="radius" />
     <button @click="find">Find nearest locations</button>
     <GMapMap :center="center" :zoom="10" map-type-id="terrain" style="width: 500px; height: 300px">
       <GMapMarker :key="index" v-for="(marker, index) in markers" :position="marker.location"/>
@@ -28,9 +28,9 @@ export default {
   }),
   methods: {
     async find() {
-      const url = `${process.env.VUE_APP_CODEXIST_BE_URL}/codexist-places/places?lat=${this.lat}&lng=${this.lng}&radius=${this.radius}` // maybe this can replaced with axios
+      const url = `${process.env.VUE_APP_CODEXIST_BE_URL}/codexist-places/places?lat=${parseFloat(this.$refs.lat.value)}&lng=${parseFloat(this.$refs.lng.value)}&radius=${this.$refs.radius.value}` // maybe this can replaced with axios
       this.markers = (await (await fetch(url)).json()).places.map((p) => p.geometry)
-      this.center = { lat: this.lat, lng: this.lng }
+      this.center = { lat: parseFloat(this.$refs.lat.value), lng: parseFloat(this.$refs.lng.value) }
     }
   }
 }
